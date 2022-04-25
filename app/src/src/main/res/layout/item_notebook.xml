@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:elevation="8dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="H, 16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/background_item" />
+
+            <LinearLayout
+                android:id="@+id/error_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/shadow_under_text_error"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/gd2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/gd1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:text="Raport wymaga uzupełnienia"
+                    android:textColor="?attr/colorOnError"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/error_notif_icon"
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_error_outline_24"
+                    app:tint="?attr/colorError" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date_and_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/shadow_under_text"
+                android:padding="5dp"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                app:layout_constraintBottom_toBottomOf="@id/gd2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/gd1"
+                tools:text="24 January 2022 at 17:18" />
+
+            <TextView
+                android:id="@+id/main_organ_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:textAllCaps="true"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@id/gd3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/gd2"
+                tools:text="Górna część głowy" />
+
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:fillViewport="true"
+               app:layout_constraintTop_toTopOf="@id/gd3"
+               app:layout_constraintBottom_toBottomOf="@id/gd4"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent">
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/recycler_view_sympthoms"
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_marginStart="5dp" />
+
+           </ScrollView>
+
+            <Button
+                android:id="@+id/button_show"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#42b7eb"
+                android:elevation="10dp"
+                android:padding="5dp"
+                android:text="Zobacz raport"
+                android:autoSizeMaxTextSize="12sp"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="@id/gd6"
+                app:layout_constraintEnd_toStartOf="@id/gdv1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/gd5"
+                tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/button_edit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:autoSizeMaxTextSize="12sp"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#42b7eb"
+                android:elevation="20dp"
+                android:padding="5dp"
+                android:text="Edytuj raport"
+                app:layout_constraintBottom_toBottomOf="@id/gd6"
+                app:layout_constraintEnd_toStartOf="@id/gdv2"
+                app:layout_constraintStart_toEndOf="@id/gdv1"
+                app:layout_constraintTop_toTopOf="@id/gd5"
+                tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/button_remove"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#42b7eb"
+                android:elevation="10dp"
+                android:padding="5dp"
+                app:layout_constraintTop_toTopOf="@id/gd5"
+                app:layout_constraintBottom_toBottomOf="@id/gd6"
+                app:layout_constraintStart_toEndOf="@id/gdv2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:autoSizeMaxTextSize="12sp"
+                android:autoSizeMinTextSize="8sp"
+                android:text="Usuń wpis"
+                tools:targetApi="o" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.13" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.30" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.78" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.76" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gdv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.33" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gdv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.66" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.cardview.widget.CardView>

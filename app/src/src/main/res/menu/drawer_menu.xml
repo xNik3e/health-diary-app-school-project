@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/pickerFragment"
+        android:title="Wykonaj badanie"
+        android:icon="@drawable/ic_stethoscope"/>
+
+    <item
+        android:id="@+id/noteBook"
+        android:title="Sekcja rejestrów"
+        android:icon="@drawable/ic_notebook"/>
+
+
+</menu>

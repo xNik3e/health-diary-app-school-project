@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/pickerFragment">
+
+    <fragment
+        android:id="@+id/pickerFragment"
+        android:name="com.example.gdzieboli.feature.mainwindow.PickerFragment"
+        android:label="Gdzie Boli"
+        tools:layout="@layout/fragment_picker" />
+    <fragment
+        android:id="@+id/noteBook"
+        android:name="com.example.gdzieboli.feature.mainwindow.NoteBook"
+        android:label="Gdzie Boli"
+        tools:layout="@layout/fragment_note_book" />
+</navigation>

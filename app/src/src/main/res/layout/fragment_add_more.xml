@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/default_background"
+    android:orientation="vertical"
+    tools:context=".feature.mainwindow.addMoreWindow.AddMoreFragment">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wybierz dokładne miejsce bólu"
+        android:textAlignment="center"
+        android:padding="20dp"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnSecondary"
+        android:textStyle="italic"/>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/recycler_view_fragment_add_more"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="?attr/colorSecondary"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:id="@+id/submit_btn"
+        android:layout_marginBottom="30dp"
+        android:text="Zatwierdź"/>
+</LinearLayout>
